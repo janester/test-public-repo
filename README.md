@@ -19,3 +19,9 @@ bim
 bam
 
 boom
+
+zip
+
+zap
+
+zop
