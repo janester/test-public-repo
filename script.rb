@@ -1,12 +1,17 @@
 20.times do |commit_count|
+  puts "making directories..."
   `mkdir test_files`
   `mkdir test_files/lorem_ipsum_dolor_sit_amet_consectetur_adipiscing_elit_aliquam_ultricies_accumsan_velit_vitae_scelerisque_ex_egestas_in_proin_pellentesque_felis_ac_tellus_gravida_ut_viverra_purus_feugiat_pellentesque_habitant_morbi_tristique_senectus_et_netus_et_malesuad`
 
+  puts "making files..."
   3000.times do |file_count|
     `touch test_files/lorem_ipsum_dolor_sit_amet_consectetur_adipiscing_elit_aliquam_ultricies_accumsan_velit_vitae_scelerisque_ex_egestas_in_proin_pellentesque_felis_ac_tellus_gravida_ut_viverra_purus_feugiat_pellentesque_habitant_morbi_tristique_senectus_#{file_count}.txt`
   end
 
+  puts "adding files to git..."
   `git add . > /dev/null`
+
+  puts "committing files to git..."
   `git commit -m "adding files #{commit_count}
 
   Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam ultricies accumsan velit, vitae scelerisque ex egestas in. Proin pellentesque felis ac tellus gravida, ut viverra purus feugiat. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Nulla imperdiet tristique augue non condimentum. Quisque ante sapien, facilisis vitae sollicitudin quis, lacinia vitae erat. In quam mauris, mollis at semper sed, sollicitudin nec ante. Donec id arcu in tortor ornare pellentesque.
@@ -334,7 +339,10 @@ Maecenas ac placerat urna. Nullam nec commodo neque. Nulla lacinia turpis non sa
 Nunc fermentum risus sed quam varius pharetra. Quisque finibus ligula massa, quis accumsan magna condimentum quis. In nec tempus erat, sed pulvinar mi. Sed aliquet, eros quis commodo interdum, ante leo scelerisque leo, ac facilisis elit est vel libero. Duis nec quam auctor, viverra velit sed, dictum nisl. Phasellus justo lorem, convallis vel augue sed, consectetur efficitur nunc. Sed condimentum, neque id viverra bibendum, felis felis suscipit odio, non semper ipsum purus non massa. Praesent ac maximus turpis, sit amet pulvinar odio. Nulla dapibus pharetra ex at eleifend. Cras ut consectetur odio. Nulla facilisi. Morbi accumsan mauris ligula, vitae porta ipsum metus.
 " > /dev/null`
 
+  puts "removing all of the files..."
   `rm -rf test_files/`
+  puts "adding files to git..."
   `git add . > /dev/null`
+  puts "committing files to git..."
   `git commit -m "removing files #{commit_count}`
 end
