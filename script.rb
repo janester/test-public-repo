@@ -1,4 +1,4 @@
-20.times do |commit_count|
+10.times do |commit_count|
   puts "making directories..."
   `mkdir test_files`
   `mkdir test_files/lorem_ipsum_dolor_sit_amet_consectetur_adipiscing_elit_aliquam_ultricies_accumsan_velit_vitae_scelerisque_ex_egestas_in_proin_pellentesque_felis_ac_tellus_gravida_ut_viverra_purus_feugiat_pellentesque_habitant_morbi_tristique_senectus_et_netus_et_malesuad`
@@ -12,7 +12,7 @@
   `git add . > /dev/null`
 
   puts "committing files to git..."
-  `git commit -m "Committing from ruby script"`
+  `git commit`
 
   puts "removing all of the files..."
   `rm -rf test_files/`
