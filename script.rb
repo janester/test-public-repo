@@ -12,12 +12,14 @@
   `git add . > /dev/null`
 
   puts "committing files to git..."
-  `git commit`
+  `git commit -m adding_files_#{commit_count}`
 
   puts "removing all of the files..."
   `rm -rf test_files/`
+
   puts "adding files to git..."
   `git add . > /dev/null`
+
   puts "committing files to git..."
   `git commit -m "removing files #{commit_count}`
 end
