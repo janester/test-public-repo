@@ -12,7 +12,7 @@
   `git add . > /dev/null`
 
   puts "committing files to git..."
-  `git commit -m "Committing from ruby script" > /dev/null`
+  `git commit -m "Committing from ruby script"`
 
   puts "removing all of the files..."
   `rm -rf test_files/`
