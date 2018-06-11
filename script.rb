@@ -1,5 +1,3 @@
-require 'shellwords'
-
 20.times do |commit_count|
   puts "making directories..."
   `mkdir test_files`
@@ -14,8 +12,7 @@ require 'shellwords'
   `git add . > /dev/null`
 
   puts "committing files to git..."
-  commit_msg = "adding files #{commit_count}"
-  `git commit -m #{Shellwords.escape(commit_msg)} > /dev/null`
+  `git commit -m "Committing from ruby script" > /dev/null`
 
   puts "removing all of the files..."
   `rm -rf test_files/`
