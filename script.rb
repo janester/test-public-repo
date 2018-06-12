@@ -23,8 +23,8 @@ g = Git.open('/Users/janester/Documents/code/dev-repos/test-public-repo/')
   `rm -rf test_files/`
 
   puts "adding files to git..."
-  `git add . > /dev/null`
+  `git add .`
 
   puts "committing files to git..."
-  `git commit -m "removing files #{commit_count}`
+  g.commit("removing files #{commit_count}")
 end
