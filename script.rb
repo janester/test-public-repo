@@ -17,7 +17,6 @@ g = Git.open('/Users/janester/Documents/code/dev-repos/test-public-repo/')
   `git add .`
 
   puts "committing files to git..."
-  #`git commit -m adding_files_#{commit_count}`
   g.commit("adding files #{commit_count}")
 
   puts "removing all of the files..."
