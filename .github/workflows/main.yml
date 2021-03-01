@@ -1,13 +1,10 @@
-name: Issues and Dispatches
+name: Debug Action
 on: [issue_comment, repository_dispatch]
-env:
-  CI: true
-  NODE: 12.x
-
 jobs:
   test:
     runs-on: ubuntu-latest
 
-  steps:
-    - name: Debug Action
-    uses: hmarr/debug-action@v1.0.0
+    steps:
+      - name: Debug Action
+      uses: hmarr/debug-action@v1.0.0
+
