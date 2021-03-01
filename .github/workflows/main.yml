@@ -1,4 +1,4 @@
-name: Debug Action
+name: Hello
 on: [issue_comment, repository_dispatch]
 jobs:
   test:
