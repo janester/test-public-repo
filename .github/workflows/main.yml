@@ -1,8 +1,5 @@
-name: Issue Comment Deleted
-on:
-  issue_comment:
-    # Only use the types keyword to narrow down the activity types that will trigger your workflow.
-    types: [deleted]
+name: Issues and Dispatches
+on: [issue_comment, repository_dispatch]
 env:
   CI: true
   NODE: 12.x
@@ -11,32 +8,6 @@ jobs:
   test:
     runs-on: ubuntu-latest
 
-    steps:
-      - name: Clone repository
-        uses: actions/checkout@v2
-
-      - name: Set up Node.js
-        uses: actions/setup-node@v1
-        with:
-          node-version: "${{ env.NODE }}"
-
-      - run: node --version
-      - run: npm --version
-
-      - name: Set up npm cache
-        uses: actions/cache@v1
-        with:
-          path: ~/.npm
-          key: ${{ runner.os }}-node-v${{ env.NODE }}-${{ hashFiles('package.json') }}-${{ hashFiles('package-lock.json') }}-${{ hashFiles('.github/workflows/markdown.yml') }}
-          restore-keys: |
-            ${{ runner.OS }}-node-v${{ env.NODE }}-${{ hashFiles('package.json') }}-${{ hashFiles('package-lock.json') }}-${{ hashFiles('.github/workflows/markdown.yml') }}
-            ${{ runner.OS }}-node-v${{ env.NODE }}-
-
-      - name: Install npm dependencies
-        run: npm ci
-
-      - name: Set up annotations with a problem-matcher
-        run: echo "::add-matcher::.github/workflows/markdown/markdownlint-problem-matcher.json"
-
-      - name: Run markdownlint
-        run: npm run markdown
+  steps:
+    - name: Debug Action
+    uses: hmarr/debug-action@v1.0.0
