@@ -1,1 +1,1 @@
-make the checks run
+make the checks run faster
