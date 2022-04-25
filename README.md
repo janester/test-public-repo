@@ -1,1 +1,1 @@
-test push prod 1
+make the checks run
